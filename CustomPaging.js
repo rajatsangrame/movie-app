@@ -99,21 +99,19 @@ const App = () => {
       <div className="col">
         <h5>Views above 1000</h5>
         <div className="list-container">
-          {Object.values(firstItems).map((item, index) => (
-            <div
-              key={item.id}
-              className="list-item"
-              ref={
-                Object.values(firstItems).length === index + 1
-                  ? handleObserver1
-                  : null
-              }
-            >
-              <p><strong>ID:</strong> {item.id}</p>
-              <p><strong>Title:</strong> {item.title}</p>
-              <p><strong>Views:</strong> {item.views}</p>
-            </div>
-          ))}
+          {Object.values(firstItems)
+            .map((item, index) => (
+              <div
+                key={item.id}
+                className="list-item"
+                ref={Object.values(firstItems).length === index + 1 ? handleObserver1 : null}
+              >
+                <p><strong>ID:</strong> {item.id}</p>
+                <p><strong>Title:</strong> {item.title}</p>
+                <p><strong>Views:</strong> {item.views}</p>
+                <div className="divider"></div>
+              </div>
+            ))}
         </div>
       </div>
       <div className="col">
@@ -121,24 +119,29 @@ const App = () => {
         <div className="list-container">
           {Object.values(secondItems)
             .map((item, index) => (
-              <div key={item.id}
+              <div
+                key={item.id}
                 className="list-item"
-                ref={Object.values(secondItems).length === index + 1 ? handleObserver2 : null} >
+                ref={Object.values(secondItems).length === index + 1 ? handleObserver2 : null}
+              >
                 <p><strong>ID:</strong> {item.id}</p>
                 <p><strong>Title:</strong> {item.title}</p>
                 <p><strong>Views:</strong> {item.views}</p>
+                <div className="divider"></div>
               </div>
             ))}
         </div>
       </div >
-      <div className="col" >
+      <div className="col">
         <h5>Views Below 500</h5>
         <div className="list-container">
           {Object.values(thirdItems)
             .map((item, index) => (
-              <div key={item.id}
+              <div
+                key={item.id}
                 className="list-item"
-                ref={Object.values(thirdItems).length === index + 1 ? handleObserver3 : null} >
+                ref={Object.values(thirdItems).length === index + 1 ? handleObserver3 : null}
+              >
                 <p><strong>ID:</strong> {item.id}</p>
                 <p><strong>Title:</strong> {item.title}</p>
                 <p><strong>Views:</strong> {item.views}</p>
